@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "600187168194",
+    "project_id": "apphuevoslagranja",
+    "storage_bucket": "apphuevoslagranja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600187168194:android:35e4e7331c13fb0bb2a25b",
+        "android_client_info": {
+          "package_name": "com.example.huevos_la_granja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600187168194-guqdghfkuq67tunbjnqli8egdl5dtmm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-bZT6h3FsIdcEVtncBVjoJhKmoQRiM0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600187168194-guqdghfkuq67tunbjnqli8egdl5dtmm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
