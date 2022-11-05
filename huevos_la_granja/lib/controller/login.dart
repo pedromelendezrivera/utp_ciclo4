@@ -1,22 +1,23 @@
+import '../model/repository/fb_auth.dart';
 import '../model/repository/user.dart';
 import 'request/login.dart';
 
 class LoginController {
   late final UserRepository _userRepository;
+  late final FirebaseAuthenticationRepository _authRepository;
 
   LoginController() {
     _userRepository = UserRepository();
+    _authRepository = FirebaseAuthenticationRepository();
   }
 
-  String validateEmailPassword(LoginRequest request) {
+ Future<String> validateEmailPassword(LoginRequest request) async {
+    await _authRepository.signInEmailPassword(request.email, request.password);
     // Consultar el usuario que tenga el correo dado
     var user = _userRepository.findByEmail(request.email);
 
-    // Verificar si la clave es igual a la que está en la BD
-    if (user.password != request.password) {
-      throw Exception("Credenciales inválidas");
-    }
-
     return user.name!;
   }
+
+
 }

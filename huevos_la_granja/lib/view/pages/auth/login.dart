@@ -156,7 +156,7 @@ class LoginPage extends StatelessWidget {
 
                 // Validar correo y clave en BD
                 try {
-                  var name = _controller.validateEmailPassword(_request);
+//                  var name = _controller.validateEmailPassword(_request);
 
                   Navigator.push(
                     context,
@@ -166,7 +166,7 @@ class LoginPage extends StatelessWidget {
 //                      builder: (context) => AuxBodegaPage(
 //                      builder: (context) => VendedorPage(
                         email: _request.email,
-                        name: name,
+                        name: "www",
                       ),
                     ),
                   );
