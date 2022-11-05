@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../cash_close.dart';
-import '../payments.dart';
-// import '../pages/cash_close.dart';
-// import '../pages/payments.dart';
+import '../pages/administrador/adminAjuste.dart';
+import '../pages/administrador/adminInventario.dart';
+import '../pages/administrador/adminVentas.dart';
 
-class DrawerWidget extends StatelessWidget {
+class DrawerWidgetAdministrador extends StatelessWidget {
   final String email;
   final String name;
 
-  const DrawerWidget({super.key, required this.email, required this.name});
+  const DrawerWidgetAdministrador(
+      {super.key, required this.email, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -25,36 +25,33 @@ class DrawerWidget extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.payment),
-            title: const Text('Cobros'),
-            onTap: () {
-              Navigator.pushReplacement(
+            title: const Text('Inventarios'),
+            onTap: () {        Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PaymentsPage(
-                      email: email,
-                      name: name,
-                    ),
+                    builder: (context) => const AdminInventarioPage(),
                   ));
             },
           ),
           ListTile(
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Ventas'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.supervisor_account),
-            title: const Text('Clientes'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.money),
-            title: const Text('Cierre de caja'),
             onTap: () {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CashClosePage(),
+                    builder: (context) => const AdminVentasPage(),
+                  ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.supervisor_account),
+            title: const Text('Ajuste de Inventario'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AdminAjustePage(),
                   ));
             },
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'witgets/drawer_administrador.dart';
-import 'witgets/drawer_vendedor.dart';
-import 'witgets/fondoMenu.dart';
+import '../../widgets/drawer_administrador.dart';
+import '../../widgets/drawer_vendedor.dart';
+import '../../widgets/fondoMenu.dart';
 //import '../widgets/drawer.dart';
 
 class VendedorPage extends StatelessWidget {

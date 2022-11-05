@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../auxConsulta.dart';
-import '../auxIngreso.dart';
-import '../cash_close.dart';
-import '../payments.dart';
-// import '../pages/cash_close.dart';
-// import '../pages/payments.dart';
+import '../pages/vendedor/vendedorConsulta.dart';
 
-class DrawerWidgetAuxbodega extends StatelessWidget {
+class DrawerWidgetVendedor extends StatelessWidget {
   final String email;
   final String name;
 
-  const DrawerWidgetAuxbodega(
+  const DrawerWidgetVendedor(
       {super.key, required this.email, required this.name});
 
   @override
@@ -27,24 +22,13 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
             child: _header(),
           ),
           ListTile(
-            leading: const Icon(Icons.payment),
-            title: const Text('Ingreso Mercancia'),
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AuxIngresoPage(),
-                  ));
-            },
-          ),
-          ListTile(
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Consulta Inventario'),
             onTap: () {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AuxConsultaPage(),
+                    builder: (context) => const VendedorConsultaPage(),
                   ));
             },
           ),

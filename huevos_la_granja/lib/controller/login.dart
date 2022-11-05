@@ -17,6 +17,6 @@ class LoginController {
     // Consultar el usuario que tenga el correo dado
     var user = _userRepository.findByEmail(request.email);
 
-    return user!;
+    return user;
   }
 }

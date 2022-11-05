@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
-import '../administrador.dart';
-import '../auxBodega.dart';
-import '../vendedor.dart';
+import '../administrador/administrador.dart';
+import '../auxiliar_bodega/auxBodega.dart';
+import '../vendedor/vendedor.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {

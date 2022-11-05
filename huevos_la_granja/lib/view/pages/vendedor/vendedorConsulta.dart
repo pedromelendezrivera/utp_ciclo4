@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:huevos_la_granja/view/pages/witgets/drawer_vendedor.dart';
 
-import 'witgets/drawer.dart';
-import 'witgets/drawer_auxbodega.dart';
-
-//import '../widgets/drawer.dart';
+import 'package:huevos_la_granja/view/widgets/drawer_vendedor.dart';
 
 class VendedorConsultaPage extends StatelessWidget {
   const VendedorConsultaPage({super.key});

@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../adminAjuste.dart';
-import '../adminInventario.dart';
-import '../adminVentas.dart';
-import '../cash_close.dart';
-import '../payments.dart';
-// import '../pages/cash_close.dart';
-// import '../pages/payments.dart';
+import '../pages/auxiliar_bodega/auxConsulta.dart';
+import '../pages/auxiliar_bodega/auxIngreso.dart';
 
-class DrawerWidgetAdministrador extends StatelessWidget {
+class DrawerWidgetAuxbodega extends StatelessWidget {
   final String email;
   final String name;
 
-  const DrawerWidgetAdministrador(
+  const DrawerWidgetAuxbodega(
       {super.key, required this.email, required this.name});
 
   @override
@@ -29,33 +24,23 @@ class DrawerWidgetAdministrador extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.payment),
-            title: const Text('Inventarios'),
-            onTap: () {        Navigator.pushReplacement(
+            title: const Text('Ingreso Mercancia'),
+            onTap: () {
+              Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AdminInventarioPage(),
+                    builder: (context) => const AuxIngresoPage(),
                   ));
             },
           ),
           ListTile(
             leading: const Icon(Icons.shopping_bag),
-            title: const Text('Ventas'),
+            title: const Text('Consulta Inventario'),
             onTap: () {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AdminVentasPage(),
-                  ));
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.supervisor_account),
-            title: const Text('Ajuste de Inventario'),
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AdminAjustePage(),
+                    builder: (context) => const AuxConsultaPage(),
                   ));
             },
           ),

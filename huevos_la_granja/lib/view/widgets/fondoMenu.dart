@@ -9,7 +9,7 @@ Widget fondoMenu() {
       width: 370,
       height: 580,
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
+        color: const Color.fromARGB(255, 255, 255, 255),
         border: Border.all(),
       ),
       child: Column(
