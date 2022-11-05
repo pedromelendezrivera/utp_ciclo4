@@ -162,9 +162,9 @@ class LoginPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
 //                      builder: (context) => PaymentsPage(
-//                      builder: (context) => AdministradorPage(
+                      builder: (context) => AdministradorPage(
 //                      builder: (context) => AuxBodegaPage(
-                      builder: (context) => VendedorPage(
+//                      builder: (context) => VendedorPage(
                         email: _request.email,
                         name: name,
                       ),

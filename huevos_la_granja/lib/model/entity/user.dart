@@ -5,6 +5,8 @@ class UserEntity {
   late String? phone;
   late String? password;
   late bool? isAdmin;
+  late String? typeuser;
+  
 
   UserEntity(
       {this.email,
@@ -12,5 +14,6 @@ class UserEntity {
       this.address,
       this.phone,
       this.password,
-      this.isAdmin});
+      this.isAdmin,
+      this.typeuser});
 }
