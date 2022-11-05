@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
-import '../administrador/administrador.dart';
-import '../auxiliar_bodega/auxBodega.dart';
+import '../administrador/admin_home.dart';
+import '../auxiliar_bodega/aux_bodega.dart';
 import '../vendedor/vendedor.dart';
 
 // ignore: must_be_immutable

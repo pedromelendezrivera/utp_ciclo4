@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/drawer_administrador.dart';
 
-//import '../widgets/drawer.dart';
-
 class AdminInventarioPage extends StatelessWidget {
   const AdminInventarioPage({super.key});
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../pages/vendedor/vendedorConsulta.dart';
+import '../pages/vendedor/vendedor_consulta.dart';
 
 class DrawerWidgetVendedor extends StatelessWidget {
   final String email;

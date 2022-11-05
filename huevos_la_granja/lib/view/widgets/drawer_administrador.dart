@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../pages/administrador/adminAjuste.dart';
-import '../pages/administrador/adminInventario.dart';
-import '../pages/administrador/adminVentas.dart';
+import '../pages/administrador/admin_ajuste.dart';
+import '../pages/administrador/admin_inventario.dart';
+import '../pages/administrador/admin_ventas.dart';
 
 class DrawerWidgetAdministrador extends StatelessWidget {
   final String email;
