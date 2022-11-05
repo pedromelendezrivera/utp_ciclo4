@@ -3,9 +3,9 @@ import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
 import '../administrador.dart';
 import '../auxBodega.dart';
-import '../payments.dart';
 import '../vendedor.dart';
 
+// ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
   final _imageUrl = "assets/images/inicio.png";
   late LoginController _controller;
@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
               width: 300,
               height: 590,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 204, 204, 204),
+                color: const Color.fromARGB(255, 204, 204, 204),
                 border: Border.all(),
               ),
               child: Column(
@@ -158,8 +158,8 @@ class LoginPage extends StatelessWidget {
                 try {
                   var userEntityObject =
                       await _controller.validateEmailPassword(_request);
-                  String destinoPage = '';
                   if (userEntityObject.typeUser == '1') {
+                    // ignore: use_build_context_synchronously
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -170,6 +170,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     );
                   } else if (userEntityObject.typeUser == "2") {
+                    // ignore: use_build_context_synchronously
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -180,6 +181,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     );
                   } else {
+                    // ignore: use_build_context_synchronously
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -191,14 +193,6 @@ class LoginPage extends StatelessWidget {
                     );
                   }
                 } catch (e) {
-                  // showDialog(
-                  //   context: context,
-                  //   builder: (context) => AlertDialog(
-                  //     title: const Text("Ventas"),
-                  //     content: Text(e.toString()),
-                  //   ),
-                  // );
-
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text(e.toString())));
                 }
