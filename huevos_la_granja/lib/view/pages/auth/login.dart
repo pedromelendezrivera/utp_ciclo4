@@ -5,6 +5,7 @@ import '../../../controller/request/login.dart';
 import '../administrador/admin_home.dart';
 import '../auxiliar_bodega/aux_bodega.dart';
 import '../vendedor/vendedor.dart';
+import 'widgets/inicio_alternativo.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
@@ -36,7 +37,7 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 children: [
                   _formulario(context),
-                  _inicioAlternativo(),
+                  inicioAlternativo(),
                   logoPrincipal(),
                 ],
               ),
@@ -90,33 +91,6 @@ class LoginPage extends StatelessWidget {
       onSaved: (value) {
         _request.password = value!;
       },
-    );
-  }
-
-  Widget _inicioAlternativo() {
-    return Column(
-      children: [
-        const Text("O iniciar sesion con"),
-        const SizedBox(
-          height: 8,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              child: const Text("Facebook"),
-              onPressed: () {},
-            ),
-            ElevatedButton(
-              child: const Text("Google"),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-      ],
     );
   }
 
