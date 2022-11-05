@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
-import '../payments.dart';
+import '../administrador/admin_home.dart';
+import '../auxiliar_bodega/aux_bodega.dart';
+import '../vendedor/vendedor.dart';
 
+// ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
   final _imageUrl = "assets/images/inicio.png";
   late LoginController _controller;
@@ -27,7 +30,7 @@ class LoginPage extends StatelessWidget {
               width: 300,
               height: 590,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 204, 204, 204),
+                color: const Color.fromARGB(255, 204, 204, 204),
                 border: Border.all(),
               ),
               child: Column(
@@ -147,23 +150,48 @@ class LoginPage extends StatelessWidget {
               "Iniciar sesion",
               style: TextStyle(fontSize: 24),
             ),
-            onPressed: () {
+            onPressed: () async {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
 
                 // Validar correo y clave en BD
                 try {
-                  var name = _controller.validateEmailPassword(_request);
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PaymentsPage(
-                        email: _request.email,
-                        name: name,
+                  var userEntityObject =
+                      await _controller.validateEmailPassword(_request);
+                  if (userEntityObject.typeUser == '1') {
+                    // ignore: use_build_context_synchronously
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AdministradorPage(
+                          email: _request.email,
+                          name: "Huevos la Granja",
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } else if (userEntityObject.typeUser == "2") {
+                    // ignore: use_build_context_synchronously
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AuxBodegaPage(
+                          email: _request.email,
+                          name: "Huevos la Granja",
+                        ),
+                      ),
+                    );
+                  } else {
+                    // ignore: use_build_context_synchronously
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VendedorPage(
+                          email: _request.email,
+                          name: "Huevos la Granja",
+                        ),
+                      ),
+                    );
+                  }
                 } catch (e) {
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text(e.toString())));

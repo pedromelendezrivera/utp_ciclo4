@@ -4,20 +4,38 @@ class UserRepository {
   final _users = <String, UserEntity>{};
 
   UserRepository() {
-    _users["cesar@email.com"] = UserEntity(
-        email: "cesar@email.com",
-        name: "Cesar Augusto Diaz Arriaga",
-        address: "Cra 1 # 2 - 03, Pereira",
+    _users["jorge@email.com"] = UserEntity(
+        email: "jorge@email.com",
+        name: "Jorge Mendez",
+        address: "Cra 12 # 12 - 03, Pereira",
         phone: "3211234567",
         password: "123456",
-        isAdmin: true);
-    _users["laura@email.com"] = UserEntity(
-        email: "laura@email.com",
-        name: "Laura Cristina Pacheco",
+        isAdmin: true,
+        typeUser: "1");
+    _users["ana@email.com"] = UserEntity(
+        email: "ana@email.com",
+        name: "Ana Maria Rivvera",
+        address: "Cra 21 # 21 - 05, Pereira",
+        phone: "3112223334",
+        password: "123456",
+        isAdmin: false,
+        typeUser: "2");
+    _users["juan@email.com"] = UserEntity(
+        email: "juan@email.com",
+        name: "Juan Perez",
         address: "Cra 1 # 2 - 05, Pereira",
         phone: "3112223334",
-        password: "654321",
-        isAdmin: false);
+        password: "123456",
+        isAdmin: false,
+        typeUser: "3");
+    _users["pedromelendezrivera@gmail.com"] = UserEntity(
+        email: "pedromelendezrivera@gmail.com",
+        name: "Pedro Melendez",
+        address: "Cra 1 # 2 - 05, Pereira",
+        phone: "3112223334",
+        password: "123456",
+        isAdmin: false,
+        typeUser: "1");
   }
 
   UserEntity findByEmail(String email) {
