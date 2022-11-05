@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widgets/logo_principal.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
 import '../administrador/admin_home.dart';
@@ -7,7 +8,6 @@ import '../vendedor/vendedor.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
-  final _imageUrl = "assets/images/inicio.png";
   late LoginController _controller;
   late LoginRequest _request;
 
@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   _formulario(context),
                   _inicioAlternativo(),
-                  _logo(),
+                  logoPrincipal(),
                 ],
               ),
             ),
@@ -116,17 +116,6 @@ class LoginPage extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-      ],
-    );
-  }
-
-  Widget _logo() {
-    return Column(
-      children: [
-        const SizedBox(
-          height: 40,
-        ),
-        Image.asset(_imageUrl),
       ],
     );
   }
