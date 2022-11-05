@@ -150,27 +150,55 @@ class LoginPage extends StatelessWidget {
               "Iniciar sesion",
               style: TextStyle(fontSize: 24),
             ),
-            onPressed: () {
+            onPressed: () async {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
 
                 // Validar correo y clave en BD
                 try {
-//                  var name = _controller.validateEmailPassword(_request);
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-//                      builder: (context) => PaymentsPage(
-                      builder: (context) => AdministradorPage(
-//                      builder: (context) => AuxBodegaPage(
-//                      builder: (context) => VendedorPage(
-                        email: _request.email,
-                        name: "www",
+                  var userEntityObject =
+                      await _controller.validateEmailPassword(_request);
+                  String destinoPage = '';
+                  if (userEntityObject.typeUser == '1') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AdministradorPage(
+                          email: _request.email,
+                          name: "Huevos la Granja",
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } else if (userEntityObject.typeUser == "2") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AuxBodegaPage(
+                          email: _request.email,
+                          name: "Huevos la Granja",
+                        ),
+                      ),
+                    );
+                  } else {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VendedorPage(
+                          email: _request.email,
+                          name: "Huevos la Granja",
+                        ),
+                      ),
+                    );
+                  }
                 } catch (e) {
+                  // showDialog(
+                  //   context: context,
+                  //   builder: (context) => AlertDialog(
+                  //     title: const Text("Ventas"),
+                  //     content: Text(e.toString()),
+                  //   ),
+                  // );
+
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text(e.toString())));
                 }

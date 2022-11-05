@@ -1,3 +1,4 @@
+import '../model/entity/user.dart';
 import '../model/repository/fb_auth.dart';
 import '../model/repository/user.dart';
 import 'request/login.dart';
@@ -11,13 +12,11 @@ class LoginController {
     _authRepository = FirebaseAuthenticationRepository();
   }
 
- Future<String> validateEmailPassword(LoginRequest request) async {
+  Future<UserEntity> validateEmailPassword(LoginRequest request) async {
     await _authRepository.signInEmailPassword(request.email, request.password);
     // Consultar el usuario que tenga el correo dado
     var user = _userRepository.findByEmail(request.email);
 
-    return user.name!;
+    return user!;
   }
-
-
 }

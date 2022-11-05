@@ -11,7 +11,7 @@ class UserRepository {
         phone: "3211234567",
         password: "123456",
         isAdmin: true,
-        typeuser: "1");
+        typeUser: "1");
     _users["ana@email.com"] = UserEntity(
         email: "ana@email.com",
         name: "Ana Maria Rivvera",
@@ -19,7 +19,7 @@ class UserRepository {
         phone: "3112223334",
         password: "123456",
         isAdmin: false,
-        typeuser: "2");
+        typeUser: "2");
     _users["juan@email.com"] = UserEntity(
         email: "juan@email.com",
         name: "Juan Perez",
@@ -27,7 +27,15 @@ class UserRepository {
         phone: "3112223334",
         password: "123456",
         isAdmin: false,
-        typeuser: "3");
+        typeUser: "3");
+    _users["pedromelendezrivera@gmail.com"] = UserEntity(
+        email: "pedromelendezrivera@gmail.com",
+        name: "Pedro Melendez",
+        address: "Cra 1 # 2 - 05, Pereira",
+        phone: "3112223334",
+        password: "123456",
+        isAdmin: false,
+        typeUser: "1");
   }
 
   UserEntity findByEmail(String email) {
