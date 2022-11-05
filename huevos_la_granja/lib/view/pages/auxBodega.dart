@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'witgets/drawer_auxbodega.dart';
+import 'witgets/fondoMenu.dart';
 
 //import '../widgets/drawer.dart';
 
@@ -19,9 +20,7 @@ class AuxBodegaPage extends StatelessWidget {
       drawer: DrawerWidgetAuxbodega(email: email, name: name),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-        ),
+        child: fondoMenu(),
       ),
     );
   }

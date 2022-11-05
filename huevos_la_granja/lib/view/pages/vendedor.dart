@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'witgets/drawer_administrador.dart';
 import 'witgets/drawer_vendedor.dart';
+import 'witgets/fondoMenu.dart';
 //import '../widgets/drawer.dart';
 
 class VendedorPage extends StatelessWidget {
@@ -18,9 +19,7 @@ class VendedorPage extends StatelessWidget {
       drawer: DrawerWidgetVendedor(email: email, name: name),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-        ),
+        child: fondoMenu(),
       ),
     );
   }

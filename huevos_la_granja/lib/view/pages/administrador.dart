@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/pages/witgets/fondoMenu.dart';
 import 'witgets/drawer_administrador.dart';
 //import '../widgets/drawer.dart';
 
@@ -17,10 +18,10 @@ class AdministradorPage extends StatelessWidget {
       drawer: DrawerWidgetAdministrador(email: email, name: name),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-        ),
+        child: fondoMenu(),
       ),
     );
   }
 }
+
+
