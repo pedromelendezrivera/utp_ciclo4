@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import '../../widgets/logo_principal.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
 import '../administrador/admin_home.dart';
 import '../auxiliar_bodega/aux_bodega.dart';
 import '../vendedor/vendedor.dart';
+import 'widgets/inicio_alternativo.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
-  final _imageUrl = "assets/images/inicio.png";
   late LoginController _controller;
   late LoginRequest _request;
 
@@ -19,8 +20,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
+      body: Center(
         child: SingleChildScrollView(
           child: Column(children: [
             const SizedBox(
@@ -28,16 +28,19 @@ class LoginPage extends StatelessWidget {
             ),
             Container(
               width: 300,
-              height: 590,
+              height: 500,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 204, 204, 204),
-                border: Border.all(),
-              ),
+                  color: const Color.fromARGB(255, 204, 204, 204),
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(20.0)),
               child: Column(
                 children: [
                   _formulario(context),
-                  _inicioAlternativo(),
-                  _logo(),
+                  inicioAlternativo(),
+                  SizedBox(
+                    width: 260,
+                    child: logoPrincipal(),
+                  ),
                 ],
               ),
             ),
@@ -48,86 +51,54 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _campoCorreoElectronico() {
-    return TextFormField(
-      maxLength: 50,
-      keyboardType: TextInputType.emailAddress,
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Correo Electrónico',
+    return Padding(
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 20.0),
+      child: TextFormField(
+        maxLength: 50,
+        keyboardType: TextInputType.emailAddress,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Correo Electrónico',
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "El correo electronico es obligatorio";
+          }
+          if (!value.contains("@") || !value.contains(".")) {
+            return "El correo tiene un formato inválido";
+          }
+          return null;
+        },
+        onSaved: (value) {
+          _request.email = value!;
+        },
       ),
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "El correo electronico es obligatorio";
-        }
-        if (!value.contains("@") || !value.contains(".")) {
-          return "El correo tiene un formato inválido";
-        }
-        return null;
-      },
-      onSaved: (value) {
-        _request.email = value!;
-      },
     );
   }
 
   Widget _campoClave() {
-    return TextFormField(
-      maxLength: 30,
-      obscureText: true,
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Contraseña',
+    return Padding(
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 20.0),
+      child: TextFormField(
+        maxLength: 30,
+        obscureText: true,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Contraseña',
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "La contraseña es obligatoria";
+          }
+          if (value.length < 6) {
+            return "Minimo debe contener 6 caracteres";
+          }
+          return null;
+        },
+        onSaved: (value) {
+          _request.password = value!;
+        },
       ),
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "La contraseña es obligatoria";
-        }
-        if (value.length < 6) {
-          return "Minimo debe contener 6 caracteres";
-        }
-        return null;
-      },
-      onSaved: (value) {
-        _request.password = value!;
-      },
-    );
-  }
-
-  Widget _inicioAlternativo() {
-    return Column(
-      children: [
-        const Text("O iniciar sesion con"),
-        const SizedBox(
-          height: 8,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              child: const Text("Facebook"),
-              onPressed: () {},
-            ),
-            ElevatedButton(
-              child: const Text("Google"),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-      ],
-    );
-  }
-
-  Widget _logo() {
-    return Column(
-      children: [
-        const SizedBox(
-          height: 40,
-        ),
-        Image.asset(_imageUrl),
-      ],
     );
   }
 
@@ -144,7 +115,7 @@ class LoginPage extends StatelessWidget {
           _campoCorreoElectronico(),
           const SizedBox(height: 8),
           _campoClave(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 8),
           ElevatedButton(
             child: const Text(
               "Iniciar sesion",
@@ -153,7 +124,6 @@ class LoginPage extends StatelessWidget {
             onPressed: () async {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-
                 // Validar correo y clave en BD
                 try {
                   var userEntityObject =
@@ -200,7 +170,7 @@ class LoginPage extends StatelessWidget {
             },
           ),
           const SizedBox(
-            height: 16,
+            height: 8,
           ),
         ],
       ),
