@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
+import '../administrador.dart';
+import '../auxBodega.dart';
 import '../payments.dart';
+import '../vendedor.dart';
 
 class LoginPage extends StatelessWidget {
   final _imageUrl = "assets/images/inicio.png";
@@ -158,7 +161,10 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PaymentsPage(
+//                      builder: (context) => PaymentsPage(
+//                      builder: (context) => AdministradorPage(
+//                      builder: (context) => AuxBodegaPage(
+                      builder: (context) => VendedorPage(
                         email: _request.email,
                         name: name,
                       ),
