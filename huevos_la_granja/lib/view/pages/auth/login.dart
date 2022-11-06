@@ -4,7 +4,7 @@ import '../../widgets/logo_principal.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
 import '../administrador/admin_home.dart';
-import '../auxiliar_bodega/aux_bodega.dart';
+import '../auxiliar_bodega/aux_bodega_home.dart';
 import '../vendedor/vendedor.dart';
 import 'widgets/inicio_alternativo.dart';
 
