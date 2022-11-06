@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/drawer_vendedor.dart';
-import '../../widgets/fondoMenu.dart';
+import '../../widgets/fondo_menu.dart';
 
 class VendedorPage extends StatelessWidget {
   final String email;
@@ -12,13 +12,11 @@ class VendedorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey,
         title: const Text("Vendedor"),
       ),
       drawer: DrawerWidgetVendedor(email: email, name: name),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: fondoMenu(),
-      ),
+      body: fondoMenu(),
     );
   }
 }

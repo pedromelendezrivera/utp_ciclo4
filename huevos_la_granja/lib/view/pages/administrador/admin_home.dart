@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:huevos_la_granja/view/widgets/fondoMenu.dart';
+import 'package:huevos_la_granja/view/widgets/fondo_menu.dart';
 import '../../widgets/drawer_administrador.dart';
 
 class AdministradorPage extends StatelessWidget {
@@ -12,15 +12,11 @@ class AdministradorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey,
         title: const Text("Administrador"),
       ),
       drawer: DrawerWidgetAdministrador(email: email, name: name),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: fondoMenu(),
-      ),
+      body: fondoMenu(),
     );
   }
 }
-
-
