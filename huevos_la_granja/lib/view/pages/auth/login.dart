@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/espacio.dart';
 import '../../widgets/logo_principal.dart';
 import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
@@ -23,9 +24,7 @@ class LoginPage extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           child: Column(children: [
-            const SizedBox(
-              height: 40,
-            ),
+            espacio(40),
             Container(
               width: 300,
               height: 500,
@@ -109,13 +108,11 @@ class LoginPage extends StatelessWidget {
       key: formKey,
       child: Column(
         children: [
-          const SizedBox(
-            height: 20,
-          ),
+          espacio(20),
           _campoCorreoElectronico(),
-          const SizedBox(height: 8),
+          espacio(8),
           _campoClave(),
-          const SizedBox(height: 8),
+          espacio(8),
           ElevatedButton(
             child: const Text(
               "Iniciar sesion",
@@ -169,9 +166,7 @@ class LoginPage extends StatelessWidget {
               }
             },
           ),
-          const SizedBox(
-            height: 8,
-          ),
+          espacio(8),
         ],
       ),
     );

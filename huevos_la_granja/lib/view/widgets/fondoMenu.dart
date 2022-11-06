@@ -1,42 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/espacio.dart';
+import 'package:huevos_la_granja/view/widgets/logo_principal.dart';
+import 'package:huevos_la_granja/view/widgets/logo_secundario.dart';
 
 Widget fondoMenu() {
-  return Column(children: [
-    const SizedBox(
-      height: 0,
-    ),
-    Container(
-      width: 370,
-      height: 580,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 255, 255, 255),
-        border: Border.all(),
-      ),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 200,
+  return Center(
+    child: SingleChildScrollView(
+      child: Column(children: [
+        Container(
+          width: 370,
+          height: 600,
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 255, 255, 255),
+            border: Border.all(),
           ),
-          Expanded(
-            child: Image.asset(
-              'assets/images/logo_principal.png',
-              width: 200,
-              height: 200,
-              fit: BoxFit.fitWidth,
-              alignment: Alignment.centerRight,
-            ),
+          child: Column(
+            children: [
+              espacio(200),
+              SizedBox(
+                child: logoPrincipal(),
+              ),
+              espacio(100),
+              SizedBox(
+                child: logoSecundario(),
+              )
+            ],
           ),
-          Expanded(
-            child: Image.asset(
-              'assets/images/logo_secundario.png',
-              width: 400,
-              height: 200,
-              fit: BoxFit.fitWidth,
-              alignment: Alignment.bottomCenter,
-            ),
-          )
-        ],
-      ),
+        ),
+      ]),
     ),
-  ]);
+  );
 }
