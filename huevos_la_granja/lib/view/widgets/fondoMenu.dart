@@ -19,7 +19,7 @@ Widget fondoMenu() {
           ),
           Expanded(
             child: Image.asset(
-              'assets/images/inicio.png',
+              'assets/images/logo_principal.png',
               width: 200,
               height: 200,
               fit: BoxFit.fitWidth,
@@ -28,7 +28,7 @@ Widget fondoMenu() {
           ),
           Expanded(
             child: Image.asset(
-              'assets/images/pie.png',
+              'assets/images/logo_secundario.png',
               width: 400,
               height: 200,
               fit: BoxFit.fitWidth,

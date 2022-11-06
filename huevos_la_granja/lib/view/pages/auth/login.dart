@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
 
   Widget _campoCorreoElectronico() {
     return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 20.0),
+      padding: const EdgeInsetsDirectional.only(end: 20.0, start: 20.0),
       child: TextFormField(
         maxLength: 50,
         keyboardType: TextInputType.emailAddress,
@@ -78,7 +78,7 @@ class LoginPage extends StatelessWidget {
 
   Widget _campoClave() {
     return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 20.0),
+      padding: const EdgeInsetsDirectional.only(end: 20.0, start: 20.0),
       child: TextFormField(
         maxLength: 30,
         obscureText: true,
