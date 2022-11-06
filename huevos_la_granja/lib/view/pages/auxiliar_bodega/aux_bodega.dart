@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../widgets/drawer_auxbodega.dart';
-import '../../widgets/fondoMenu.dart';
-
-//import '../widgets/drawer.dart';
+import '../../widgets/fondo_menu.dart';
 
 class AuxBodegaPage extends StatelessWidget {
   final String email;

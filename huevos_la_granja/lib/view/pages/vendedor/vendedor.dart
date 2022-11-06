@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/drawer_vendedor.dart';
-import '../../widgets/fondoMenu.dart';
+import '../../widgets/fondo_menu.dart';
 
 class VendedorPage extends StatelessWidget {
   final String email;
