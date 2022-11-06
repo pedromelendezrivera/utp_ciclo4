@@ -12,15 +12,11 @@ class AdministradorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey,
         title: const Text("Administrador"),
       ),
       drawer: DrawerWidgetAdministrador(email: email, name: name),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: fondoMenu(),
-      ),
+      body: fondoMenu(),
     );
   }
 }
-
-

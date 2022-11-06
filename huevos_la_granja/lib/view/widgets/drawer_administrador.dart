@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
 import '../pages/administrador/admin_ajuste.dart';
 import '../pages/administrador/admin_inventario.dart';
@@ -19,14 +20,15 @@ class DrawerWidgetAdministrador extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             decoration: const BoxDecoration(
-              color: Colors.blue,
+              color: Colors.grey,
             ),
             child: _header(),
           ),
           ListTile(
             leading: const Icon(Icons.payment),
             title: const Text('Inventarios'),
-            onTap: () {        Navigator.pushReplacement(
+            onTap: () {
+              Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AdminInventarioPage(),
@@ -70,7 +72,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
           radius: 30,
           child: image,
         ),
-        const SizedBox(width: 8),
+        espacio(8),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
