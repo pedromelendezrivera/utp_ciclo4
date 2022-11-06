@@ -5,7 +5,7 @@ import '../../../controller/login.dart';
 import '../../../controller/request/login.dart';
 import '../administrador/admin_home.dart';
 import '../auxiliar_bodega/aux_bodega_home.dart';
-import '../vendedor/vendedor.dart';
+import '../vendedor/vendedor_home.dart';
 import 'widgets/inicio_alternativo.dart';
 
 // ignore: must_be_immutable
