@@ -9,7 +9,8 @@ class VendedorConsultaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Vendedor - Consulta"),
+        backgroundColor: Colors.grey,
+        title: const Text("Infomre de Inventario"),
       ),
       drawer: const DrawerWidgetVendedor(email: "", name: ""),
     );

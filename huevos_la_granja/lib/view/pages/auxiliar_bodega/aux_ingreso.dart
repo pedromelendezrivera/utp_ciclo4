@@ -11,7 +11,8 @@ class AuxIngresoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Auxiliar - Ingreso"),
+        backgroundColor: Colors.grey,
+        title: const Text("Ingreso de mercancia"),
       ),
       drawer: const DrawerWidgetAuxbodega(email: "", name: ""),
     );

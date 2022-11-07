@@ -11,7 +11,8 @@ class AuxConsultaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Auxiliar - Consulta"),
+        backgroundColor: Colors.grey,
+        title: const Text("Consulta de inventario"),
       ),
       drawer: const DrawerWidgetAuxbodega(email: "", name: ""),
     );

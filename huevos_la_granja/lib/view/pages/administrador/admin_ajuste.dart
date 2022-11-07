@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/drawer_administrador.dart';
 
-//import '../widgets/drawer.dart';
-
 class AdminAjustePage extends StatelessWidget {
   const AdminAjustePage({super.key});
 
@@ -11,7 +9,8 @@ class AdminAjustePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Administrador -Ajuste"),
+        backgroundColor: Colors.grey,
+        title: const Text("Ajuste de inventario"),
       ),
       drawer: const DrawerWidgetAdministrador(email: "", name: ""),
     );
