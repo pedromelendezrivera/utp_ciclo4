@@ -9,7 +9,8 @@ class AdminInventarioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Administrador -Inventario"),
+        backgroundColor: Colors.grey,
+        title: const Text("Informes de Inventarios"),
       ),
       drawer: const DrawerWidgetAdministrador(email: "", name: ""),
     );
