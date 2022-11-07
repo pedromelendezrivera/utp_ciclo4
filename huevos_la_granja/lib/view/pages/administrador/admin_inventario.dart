@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/drawer_administrador.dart';
-
 class AdminInventarioPage extends StatelessWidget {
   const AdminInventarioPage({super.key});
 
@@ -12,7 +10,6 @@ class AdminInventarioPage extends StatelessWidget {
         backgroundColor: Colors.grey,
         title: const Text("Informes de Inventarios"),
       ),
-      drawer: const DrawerWidgetAdministrador(email: "", name: ""),
     );
   }
 }

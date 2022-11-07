@@ -28,7 +28,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
             leading: const Icon(Icons.payment),
             title: const Text('Inventarios'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AdminInventarioPage(),
@@ -39,7 +39,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Ventas'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AdminVentasPage(),
@@ -50,7 +50,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
             leading: const Icon(Icons.supervisor_account),
             title: const Text('Ajuste de Inventario'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AdminAjustePage(),
