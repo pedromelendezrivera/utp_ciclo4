@@ -132,7 +132,7 @@ class LoginPage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => AdministradorPage(
                           email: _request.email,
-                          name: "Huevos la Granja",
+                          name: userEntityObject.name!, // "Huevos la Granja",
                         ),
                       ),
                     );
@@ -143,7 +143,7 @@ class LoginPage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => AuxBodegaPage(
                           email: _request.email,
-                          name: "Huevos la Granja",
+                          name: userEntityObject.name!,
                         ),
                       ),
                     );
@@ -154,7 +154,7 @@ class LoginPage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => VendedorPage(
                           email: _request.email,
-                          name: "Huevos la Granja",
+                          name: userEntityObject.name!,
                         ),
                       ),
                     );
