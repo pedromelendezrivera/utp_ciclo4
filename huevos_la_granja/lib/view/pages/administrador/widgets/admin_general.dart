@@ -17,9 +17,20 @@ Widget inventarioGeneral() {
             const Text(
               "RESUMEN",
               style: TextStyle(fontSize: 24),
-            ),espacio(20),
+            ),
+            espacio(150),
             //Tabla de resumen
-            Container()
+            Center(
+              child: Container(
+                width: 300,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  border: Border.all(),
+                ),
+                child: const Center(child: Text("Tabla")),
+              ),
+            )
           ]),
         ),
       ]),
