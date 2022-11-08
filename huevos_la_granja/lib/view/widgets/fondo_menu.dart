@@ -8,15 +8,15 @@ Widget fondoMenu() {
     child: SingleChildScrollView(
       child: Column(children: [
         Container(
-          width: 370,
-          height: 600,
+          width: 350,
+          height: 550,
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 255, 255, 255),
             border: Border.all(),
           ),
           child: Column(
             children: [
-              espacio(200),
+              espacio(150),
               SizedBox(
                 child: logoPrincipal(),
               ),
