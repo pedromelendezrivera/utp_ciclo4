@@ -1,5 +1,6 @@
-import 'package:flutter/widgets.dart';
-import 'package:huevos_la_granja/view/widgets/espacio.dart';
+import 'package:flutter/material.dart';
+
+import '../../../widgets/espacio.dart';
 
 Widget inventarioGeneral() {
   return Center(
@@ -9,7 +10,6 @@ Widget inventarioGeneral() {
           width: 350,
           height: 550,
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 255, 255, 255),
             border: Border.all(),
           ),
           child: Column(children: [
@@ -19,18 +19,38 @@ Widget inventarioGeneral() {
               style: TextStyle(fontSize: 24),
             ),
             espacio(50),
-            //Tabla de resumen
             Center(
-              child: Container(
-                width: 300,
-                height: 200,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                  border: Border.all(),
-                ),
-                child: const Center(child: Text("Tabla")),
+              child: SingleChildScrollView(
+                child: DataTable(
+                    decoration: BoxDecoration(border: Border.all()),
+                    columns: const [
+                      DataColumn(label: Center(child: Text('Tipo Producto'))),
+                      DataColumn(label: Center(child: Text('Cantidad'))),
+                    ],
+                    rows: const [
+                      DataRow(cells: [
+                        DataCell(Center(child: Text("A"))),
+                        DataCell(Center(child: Text('1000'))),
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Center(child: Text("AA"))),
+                        DataCell(Center(child: Text('1500'))),
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Center(child: Text("Jumbo"))),
+                        DataCell(Center(child: Text('500'))),
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Center(child: Text("Extra"))),
+                        DataCell(Center(child: Text('250'))),
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Center(child: Text("B"))),
+                        DataCell(Center(child: Text('300'))),
+                      ]),
+                    ]),
               ),
-            )
+            ),
           ]),
         ),
       ]),
