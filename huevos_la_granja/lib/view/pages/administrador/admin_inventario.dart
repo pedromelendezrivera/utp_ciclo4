@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:huevos_la_granja/view/widgets/fondo_menu.dart';
 
-import 'widgets/admin_general.dart';
+import 'widgets/inventario_general.dart';
 
 class AdminInventarioPage extends StatelessWidget {
   const AdminInventarioPage({super.key});
