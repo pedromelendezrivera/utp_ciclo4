@@ -18,10 +18,22 @@ Widget inventarioGeneral() {
               "RESUMEN",
               style: TextStyle(fontSize: 24),
             ),
-            espacio(50),
+            espacio(150),
             Center(
               child: SingleChildScrollView(
                 child: DataTable(
+                    headingRowColor: MaterialStateColor.resolveWith(
+                      (states) {
+                        return Colors.amber;
+                      },
+                    ),
+                    dataRowColor: MaterialStateColor.resolveWith(
+                      (states) {
+                        return Colors.grey.shade300;
+                      },
+                    ),
+                    dataRowHeight: 25,
+                    headingRowHeight: 25,
                     decoration: BoxDecoration(border: Border.all()),
                     columns: const [
                       DataColumn(label: Center(child: Text('Tipo Producto'))),
