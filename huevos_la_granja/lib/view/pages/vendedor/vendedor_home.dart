@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/drawer_vendedor.dart';
+import 'widgets/drawer_vendedor.dart';
 import '../../widgets/fondo_menu.dart';
 import '../auth/login.dart';
 

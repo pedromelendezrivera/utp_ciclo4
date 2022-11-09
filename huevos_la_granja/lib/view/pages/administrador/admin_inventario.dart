@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:huevos_la_granja/view/widgets/fondo_menu.dart';
 
-import 'widgets/inventario_general.dart';
+import '../../widgets/inventario_general.dart';
+import '../../widgets/inventario_tienda.dart';
 
 class AdminInventarioPage extends StatelessWidget {
   const AdminInventarioPage({super.key});
@@ -31,7 +31,7 @@ class AdminInventarioPage extends StatelessWidget {
         body: TabBarView(
           children: [
             inventarioGeneral(),
-            fondoMenu(),
+            inventarioTienda(),
             const Text("3°"),
           ],
         ),

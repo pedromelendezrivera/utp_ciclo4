@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
-import '../pages/vendedor/vendedor_consulta.dart';
+import '../vendedor_consulta.dart';
 
 class DrawerWidgetVendedor extends StatelessWidget {
   final String email;

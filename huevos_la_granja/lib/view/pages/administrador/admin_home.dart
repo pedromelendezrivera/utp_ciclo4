@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:huevos_la_granja/view/pages/auth/login.dart';
-import '../../widgets/drawer_administrador.dart';
+
+import '../auth/login.dart';
+import 'widgets/drawer_administrador.dart';
 import '../../widgets/fondo_menu.dart';
 
 class AdministradorPage extends StatelessWidget {

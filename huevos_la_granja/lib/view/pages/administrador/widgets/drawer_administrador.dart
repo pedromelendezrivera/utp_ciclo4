@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
-import '../pages/auxiliar_bodega/aux_consulta.dart';
-import '../pages/auxiliar_bodega/aux_ingreso.dart';
+import '../admin_ajuste.dart';
+import '../admin_inventario.dart';
+import '../admin_ventas.dart';
 
-class DrawerWidgetAuxbodega extends StatelessWidget {
+class DrawerWidgetAdministrador extends StatelessWidget {
   final String email;
   final String name;
 
-  const DrawerWidgetAuxbodega(
+  const DrawerWidgetAdministrador(
       {super.key, required this.email, required this.name});
 
   @override
@@ -25,23 +26,34 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.payment),
-            title: const Text('Ingreso Mercancia'),
+            title: const Text('Inventarios'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AuxIngresoPage(),
+                    builder: (context) => const AdminInventarioPage(),
                   ));
             },
           ),
           ListTile(
             leading: const Icon(Icons.shopping_bag),
-            title: const Text('Consulta Inventario'),
+            title: const Text('Ventas'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AuxConsultaPage(),
+                    builder: (context) => const AdminVentasPage(),
+                  ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.supervisor_account),
+            title: const Text('Ajuste de Inventario'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AdminAjustePage(),
                   ));
             },
           ),
@@ -73,7 +85,7 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              espacio(8),
+              const SizedBox(height: 8),
               Text(
                 email,
                 style: const TextStyle(

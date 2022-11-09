@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
-import '../pages/administrador/admin_ajuste.dart';
-import '../pages/administrador/admin_inventario.dart';
-import '../pages/administrador/admin_ventas.dart';
+import '../aux_consulta.dart';
+import '../aux_ingreso.dart';
 
-class DrawerWidgetAdministrador extends StatelessWidget {
+class DrawerWidgetAuxbodega extends StatelessWidget {
   final String email;
   final String name;
 
-  const DrawerWidgetAdministrador(
+  const DrawerWidgetAuxbodega(
       {super.key, required this.email, required this.name});
 
   @override
@@ -26,34 +25,23 @@ class DrawerWidgetAdministrador extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.payment),
-            title: const Text('Inventarios'),
+            title: const Text('Ingreso Mercancia'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AdminInventarioPage(),
+                    builder: (context) => const AuxIngresoPage(),
                   ));
             },
           ),
           ListTile(
             leading: const Icon(Icons.shopping_bag),
-            title: const Text('Ventas'),
+            title: const Text('Consulta Inventario'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AdminVentasPage(),
-                  ));
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.supervisor_account),
-            title: const Text('Ajuste de Inventario'),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AdminAjustePage(),
+                    builder: (context) => const AuxConsultaPage(),
                   ));
             },
           ),
@@ -85,7 +73,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 8),
+              espacio(8),
               Text(
                 email,
                 style: const TextStyle(

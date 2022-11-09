@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/drawer_auxbodega.dart';
+import 'widgets/drawer_auxbodega.dart';
 import '../../widgets/fondo_menu.dart';
 import '../auth/login.dart';
 
