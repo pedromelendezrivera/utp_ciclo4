@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
 import '../pages/vendedor/vendedor_consulta.dart';
 
@@ -25,7 +26,7 @@ class DrawerWidgetVendedor extends StatelessWidget {
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Consulta Inventario'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const VendedorConsultaPage(),
@@ -47,7 +48,7 @@ class DrawerWidgetVendedor extends StatelessWidget {
           radius: 30,
           child: image,
         ),
-        const SizedBox(width: 8),
+        espacio(8),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +61,7 @@ class DrawerWidgetVendedor extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 8),
+              espacio(8),
               Text(
                 email,
                 style: const TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
 import '../pages/auxiliar_bodega/aux_consulta.dart';
 import '../pages/auxiliar_bodega/aux_ingreso.dart';
@@ -26,7 +27,7 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
             leading: const Icon(Icons.payment),
             title: const Text('Ingreso Mercancia'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AuxIngresoPage(),
@@ -37,7 +38,7 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Consulta Inventario'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AuxConsultaPage(),
@@ -59,7 +60,7 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
           radius: 30,
           child: image,
         ),
-        const SizedBox(width: 8),
+        espacio(8),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +73,7 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 8),
+              espacio(8),
               Text(
                 email,
                 style: const TextStyle(
