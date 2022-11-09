@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'espacio.dart';
+import '../../../widgets/espacio.dart';
 
 Widget inventarioGeneral() {
   return Center(
