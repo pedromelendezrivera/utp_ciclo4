@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/inventario_bodega.dart';
 import '../../widgets/inventario_general.dart';
 import '../../widgets/inventario_tienda.dart';
 
@@ -32,7 +33,7 @@ class AdminInventarioPage extends StatelessWidget {
           children: [
             inventarioGeneral(),
             inventarioTienda(),
-            const Text("3°"),
+            inventarioBodega(),
           ],
         ),
       ),

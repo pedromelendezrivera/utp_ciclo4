@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'espacio.dart';
 
-Widget inventarioTienda() {
+Widget inventarioBodega() {
   return Center(
     child: SingleChildScrollView(
       child: Column(children: [
