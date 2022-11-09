@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
-import '../pages/administrador/admin_ajuste.dart';
-import '../pages/administrador/admin_inventario.dart';
-import '../pages/administrador/admin_ventas.dart';
+import '../admin_ajuste.dart';
+import '../admin_inventario.dart';
+import '../admin_ventas.dart';
 
 class DrawerWidgetAdministrador extends StatelessWidget {
   final String email;
@@ -28,7 +28,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
             leading: const Icon(Icons.payment),
             title: const Text('Inventarios'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AdminInventarioPage(),
@@ -39,7 +39,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Ventas'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AdminVentasPage(),
@@ -50,7 +50,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
             leading: const Icon(Icons.supervisor_account),
             title: const Text('Ajuste de Inventario'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AdminAjustePage(),

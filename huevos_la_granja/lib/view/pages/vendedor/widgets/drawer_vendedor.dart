@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
-import '../pages/auxiliar_bodega/aux_consulta.dart';
-import '../pages/auxiliar_bodega/aux_ingreso.dart';
+import '../vendedor_consulta.dart';
 
-class DrawerWidgetAuxbodega extends StatelessWidget {
+class DrawerWidgetVendedor extends StatelessWidget {
   final String email;
   final String name;
 
-  const DrawerWidgetAuxbodega(
+  const DrawerWidgetVendedor(
       {super.key, required this.email, required this.name});
 
   @override
@@ -23,24 +23,13 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
             child: _header(),
           ),
           ListTile(
-            leading: const Icon(Icons.payment),
-            title: const Text('Ingreso Mercancia'),
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AuxIngresoPage(),
-                  ));
-            },
-          ),
-          ListTile(
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Consulta Inventario'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AuxConsultaPage(),
+                    builder: (context) => const VendedorConsultaPage(),
                   ));
             },
           ),
@@ -59,7 +48,7 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
           radius: 30,
           child: image,
         ),
-        const SizedBox(width: 8),
+        espacio(8),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +61,7 @@ class DrawerWidgetAuxbodega extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 8),
+              espacio(8),
               Text(
                 email,
                 style: const TextStyle(

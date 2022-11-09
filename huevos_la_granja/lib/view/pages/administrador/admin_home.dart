@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../widgets/drawer_administrador.dart';
+
+import '../auth/login.dart';
+import 'widgets/drawer_administrador.dart';
 import '../../widgets/fondo_menu.dart';
 
 class AdministradorPage extends StatelessWidget {
@@ -13,7 +15,20 @@ class AdministradorPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: const Text("Administrador"),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text("Administrador"),
+            IconButton(
+              icon: const Icon(Icons.logout),
+              color: Colors.black,
+              onPressed: () {
+                Navigator.pop(context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+              },
+            ),
+          ],
+        ),
       ),
       drawer: DrawerWidgetAdministrador(email: email, name: name),
       body: fondoMenu(),

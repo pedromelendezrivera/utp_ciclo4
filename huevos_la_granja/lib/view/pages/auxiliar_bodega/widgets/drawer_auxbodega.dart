@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/espacio.dart';
 
-import '../pages/vendedor/vendedor_consulta.dart';
+import '../aux_consulta.dart';
+import '../aux_ingreso.dart';
 
-class DrawerWidgetVendedor extends StatelessWidget {
+class DrawerWidgetAuxbodega extends StatelessWidget {
   final String email;
   final String name;
 
-  const DrawerWidgetVendedor(
+  const DrawerWidgetAuxbodega(
       {super.key, required this.email, required this.name});
 
   @override
@@ -22,13 +24,24 @@ class DrawerWidgetVendedor extends StatelessWidget {
             child: _header(),
           ),
           ListTile(
+            leading: const Icon(Icons.payment),
+            title: const Text('Ingreso Mercancia'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AuxIngresoPage(),
+                  ));
+            },
+          ),
+          ListTile(
             leading: const Icon(Icons.shopping_bag),
             title: const Text('Consulta Inventario'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const VendedorConsultaPage(),
+                    builder: (context) => const AuxConsultaPage(),
                   ));
             },
           ),
@@ -47,7 +60,7 @@ class DrawerWidgetVendedor extends StatelessWidget {
           radius: 30,
           child: image,
         ),
-        const SizedBox(width: 8),
+        espacio(8),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +73,7 @@ class DrawerWidgetVendedor extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 8),
+              espacio(8),
               Text(
                 email,
                 style: const TextStyle(

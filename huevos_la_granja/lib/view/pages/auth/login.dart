@@ -114,6 +114,8 @@ class LoginPage extends StatelessWidget {
           _campoClave(),
           espacio(8),
           ElevatedButton(
+            style:
+                ElevatedButton.styleFrom(backgroundColor: Colors.orange[600]),
             child: const Text(
               "Iniciar sesion",
               style: TextStyle(fontSize: 24),
@@ -132,7 +134,7 @@ class LoginPage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => AdministradorPage(
                           email: _request.email,
-                          name: userEntityObject.name!, // "Huevos la Granja",
+                          name: userEntityObject.name!,
                         ),
                       ),
                     );
