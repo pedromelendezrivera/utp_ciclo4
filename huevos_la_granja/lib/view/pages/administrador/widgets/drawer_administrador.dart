@@ -53,7 +53,7 @@ class DrawerWidgetAdministrador extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AdminAjustePage(),
+                    builder: (context) => AdminAjustePage(),
                   ));
             },
           ),
