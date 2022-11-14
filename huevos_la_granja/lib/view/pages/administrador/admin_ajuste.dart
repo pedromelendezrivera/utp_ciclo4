@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../controller/ajusteInventarioController.dart';
 import '../../../model/entity/ajusteInventario.dart';
+import '../../widgets/espacio.dart';
 
 class AdminAjustePage extends StatelessWidget {
   late final AjusteInventarioEntity _ajusteInventario;
@@ -49,19 +50,19 @@ class AdminAjustePage extends StatelessWidget {
           Row(children: [
             _campoTipoProducto(),
           ]),
-          const SizedBox(height: 10),
+          espacio(10),
           Row(children: [
             _campoAlmacen(),
           ]),
-          const SizedBox(height: 10),
+          espacio(10),
           Row(children: [
             _campoMotivo(),
           ]),
-          const SizedBox(height: 10),
+          espacio(10),
           _campoCantidad(),
-          const SizedBox(height: 8),
+          espacio(10),
           _campoObservaciones(),
-          const SizedBox(height: 8),
+          espacio(10),
           ElevatedButton(
             child: const Text("Guardar"),
             onPressed: () async {
@@ -95,7 +96,7 @@ class AdminAjustePage extends StatelessWidget {
   }
 
   Widget _campoTipoProducto() {
-    var opciones = <String>["A", "AA", "AAA", "EXTRA", "JUMBO","CRIOLLO"];
+    var opciones = <String>["A", "AA", "AAA", "EXTRA", "JUMBO", "CRIOLLO"];
     var valor = opciones[1];
 
     return Expanded(

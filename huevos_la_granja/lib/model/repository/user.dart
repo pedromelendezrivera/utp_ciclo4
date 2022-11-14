@@ -1,50 +1,40 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../entity/user.dart';
 
 class UserRepository {
-  final _users = <String, UserEntity>{};
-
+  late final CollectionReference _collection;
   UserRepository() {
-    _users["jorge@email.com"] = UserEntity(
-        email: "jorge@email.com",
-        name: "Jorge Mendez",
-        address: "Cra 12 # 12 - 03, Pereira",
-        phone: "3211234567",
-        password: "123456",
-        isAdmin: true,
-        typeUser: "1");
-    _users["ana@email.com"] = UserEntity(
-        email: "ana@email.com",
-        name: "Ana Maria Rivvera",
-        address: "Cra 21 # 21 - 05, Pereira",
-        phone: "3112223334",
-        password: "123456",
-        isAdmin: false,
-        typeUser: "2");
-    _users["juan@email.com"] = UserEntity(
-        email: "juan@email.com",
-        name: "Juan Perez",
-        address: "Cra 1 # 2 - 05, Pereira",
-        phone: "3112223334",
-        password: "123456",
-        isAdmin: false,
-        typeUser: "3");
-    _users["pedromelendezrivera@gmail.com"] = UserEntity(
-        email: "pedromelendezrivera@gmail.com",
-        name: "Pedro Melendez",
-        address: "Cra 1 # 2 - 05, Pereira",
-        phone: "3112223334",
-        password: "123456",
-        isAdmin: false,
-        typeUser: "1");
+    _collection = FirebaseFirestore.instance.collection("users");
   }
 
-  UserEntity findByEmail(String email) {
-    var user = _users[email];
+  Future<UserEntity> findByEmail(String email) async {
+    final query = await _collection
+        .where("email", isEqualTo: email)
+        .withConverter<UserEntity>(
+            fromFirestore: UserEntity.fromFirestore,
+            toFirestore: (value, options) => value.toFirestore())
+        .get();
 
-    if (user == null) {
-      throw Exception("Usuario no existe");
+    var users = query.docs.cast();
+
+    if (users.isEmpty) {
+      return Future.error("Usuario no existe");
     }
 
-    return user;
+    var user = users.first;
+
+    var response = user.data();
+    response.id = user.id;
+
+    return response;
+  }
+
+  Future<void> save(UserEntity user) async {
+    await _collection
+        .withConverter(
+            fromFirestore: UserEntity.fromFirestore,
+            toFirestore: (value, options) => value.toFirestore())
+        .add(user);
   }
 }
