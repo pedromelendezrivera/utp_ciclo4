@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/inventario_bodega.dart';
 
 class AuxConsultaPage extends StatelessWidget {
   const AuxConsultaPage({super.key});
@@ -10,6 +11,7 @@ class AuxConsultaPage extends StatelessWidget {
         backgroundColor: Colors.grey,
         title: const Text("Consulta de inventario"),
       ),
+      body: inventarioBodega(),
     );
   }
 }

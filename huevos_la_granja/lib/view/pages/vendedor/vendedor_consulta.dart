@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huevos_la_granja/view/widgets/inventario_tienda.dart';
 
 class VendedorConsultaPage extends StatelessWidget {
   const VendedorConsultaPage({super.key});
@@ -10,6 +11,7 @@ class VendedorConsultaPage extends StatelessWidget {
         backgroundColor: Colors.grey,
         title: const Text("Infomre de Inventario"),
       ),
+      body: inventarioTienda(),
     );
   }
 }
