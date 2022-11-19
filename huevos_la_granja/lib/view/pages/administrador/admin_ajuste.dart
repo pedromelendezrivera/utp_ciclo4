@@ -16,24 +16,35 @@ class AdminAjustePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey,
         title: const Text("Ajuste de Inventario"),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "Ajuste de Inventario",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+      body: Center(
+        child: Container(
+          width: 350,
+          height: 550,
+          decoration: BoxDecoration(
+            border: Border.all(),
+          ),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  espacio(22),
+                  const Text(
+                    "Ajuste de Inventario",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  espacio(16),
+                  _formulario(context),
+                ],
               ),
-              const SizedBox(height: 16),
-              _formulario(context),
-            ],
+            ),
           ),
         ),
       ),
@@ -50,21 +61,23 @@ class AdminAjustePage extends StatelessWidget {
           Row(children: [
             _campoTipoProducto(),
           ]),
-          espacio(10),
+          espacio(16),
           Row(children: [
             _campoAlmacen(),
           ]),
-          espacio(10),
+          espacio(16),
           Row(children: [
             _campoMotivo(),
           ]),
-          espacio(10),
+          espacio(16),
           _campoCantidad(),
-          espacio(10),
+          espacio(16),
           _campoObservaciones(),
-          espacio(10),
+          espacio(16),
           ElevatedButton(
-            child: const Text("Guardar"),
+            style:
+                ElevatedButton.styleFrom(backgroundColor: Colors.orange[600]),
+            child: const Text("Guardar", style: TextStyle(fontSize: 24)),
             onPressed: () async {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
