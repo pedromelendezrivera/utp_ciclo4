@@ -36,7 +36,7 @@ class AdminAjustePage extends StatelessWidget {
                   const Text(
                     "Ajuste de Inventario",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
