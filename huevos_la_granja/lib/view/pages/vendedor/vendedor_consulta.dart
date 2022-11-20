@@ -9,7 +9,7 @@ class VendedorConsultaPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: const Text("Infomre de Inventario"),
+        title: const Text("Infomre de Inventario Tienda"),
       ),
       body: inventarioTienda(),
     );

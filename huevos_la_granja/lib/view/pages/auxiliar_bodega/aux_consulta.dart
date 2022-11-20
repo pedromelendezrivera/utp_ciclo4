@@ -9,7 +9,7 @@ class AuxConsultaPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: const Text("Consulta de inventario"),
+        title: const Text("Consulta de Inventario Bodega"),
       ),
       body: inventarioBodega(),
     );

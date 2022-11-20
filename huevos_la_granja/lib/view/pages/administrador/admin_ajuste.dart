@@ -32,15 +32,7 @@ class AdminAjustePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  espacio(22),
-                  const Text(
-                    "Ajuste de Inventario",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  espacio(16),
+                  espacio(50),
                   _formulario(context),
                 ],
               ),
@@ -85,6 +77,7 @@ class AdminAjustePage extends StatelessWidget {
                 try {
                   await _controller.save(_ajusteInventario);
 
+                  // ignore: use_build_context_synchronously
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text("Ajuste guardado con exito"),
@@ -92,6 +85,7 @@ class AdminAjustePage extends StatelessWidget {
                   );
 
                   // Volver a la pantalla anterior
+                  // ignore: use_build_context_synchronously
                   Navigator.pop(context);
                 } catch (e) {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -185,7 +179,6 @@ class AdminAjustePage extends StatelessWidget {
 
   Widget _campoCantidad() {
     return TextFormField(
-      initialValue: "0",
       textAlign: TextAlign.right,
       keyboardType: TextInputType.number,
       decoration: const InputDecoration(
