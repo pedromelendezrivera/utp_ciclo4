@@ -53,12 +53,11 @@ class _FormDatePickerState extends State<_FormDatePicker> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
               nombre,
@@ -70,8 +69,8 @@ class _FormDatePickerState extends State<_FormDatePicker> {
             ),
           ],
         ),
-        TextButton(
-          child: const Text('Edit'),
+        IconButton(
+          icon: const Icon(Icons.calendar_month_outlined),
           onPressed: () async {
             var newDate = await showDatePicker(
               context: context,
